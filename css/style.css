@@ -1,0 +1,112 @@
+body{
+    font-family: sans-serif;
+}
+
+.home{
+    height: 100vh;
+    background-color: deepskyblue;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.home .navbar{
+    background-color: transparent !important;
+}
+
+.nav-link{
+    color: #000536;
+    transition: all ease 0.4s;
+}
+
+.nav-link:hover{
+    color: #fff;
+}
+
+.navbar-nav > li > a{
+    font-size: 12px;
+    font-family: "Nunito", "Helvetica", "Arial", "sans-serif";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+} 
+
+.content{
+    color: #fff;
+    font-family: "Nunito", "Helvetica", "Arial", "sans-serif";
+}
+
+.content h1{
+    font-weight: 800;
+}
+
+content h3{
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.content-text{
+    padding-top: 10%;
+}
+.content-img{
+    padding-top: 5%;
+}
+
+.home:before{
+    position: absolute;
+    content: '';
+    background: url(../assets/wave-top.png) no-repeat white;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background-size: cover;
+    width: 100%;
+    height: 15%;
+    opacity: .2;
+    animation: waveone 10s linear infinite;
+}
+
+@keyframes waveone{
+    0%{
+        background-position: 1366px;
+    }
+    100%{
+        background-position: 0px;
+    }
+}
+.home:after{
+    position: absolute;
+    content: '';
+    background: url(../assets/wave-top.png) no-repeat;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background-size: cover;
+    width: 100%;
+    height: 15%;
+    opacity: .2;
+    animation: wavetwo 10s linear infinite;
+    background-color: white;
+}
+
+@keyframes wavetwo{
+    0%{
+        background-position: 0px;
+    }
+    100%{
+        background-position: 1366px;
+    }
+}
+
+.wave{
+    position: absolute;
+    content: '';
+    background: url(../assets/wave-top.png) no-repeat;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-size: cover;
+    width: 100%;
+    height: 10%;
+    opacity: .2;
+}
