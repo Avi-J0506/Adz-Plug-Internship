@@ -1,5 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Poppins:wght@400;700&display=swap');
 
+.loader_bg{
+    position: absolute;
+    z-index: 9999;
+    background: #00031d;
+    width: 100%;
+    height: 100%;
+}
+
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+
+.loader:before, loader:after{
+    content: '';
+    border: 1em solid #ff5733;
+    border-radius: 50%;
+    width: inherit;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    animation: loader 2s linear infinite;
+}
+
+.loader:before{
+    animation-delay: .5s;
+}
+
+@keyframes loader{
+    0% {
+        transform: scale(0);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -18,6 +64,7 @@ body{
     height: 100vh;
     background: radial-gradient(ellipse at bottom, #000536 0%, #00031d 100%);
     position: relative;
+    z-index: 10;
     overflow-y: hidden;
 }
 
@@ -623,6 +670,32 @@ h1{
     font-size: 45px;
 }
 
+.slide-right {
+    /* width: 100%; */
+    overflow: hidden;
+    /* margin-left: 400px; */
+    max-width: 100%;
+ }
+
+ .slide-right h1 {
+    animation: 2s slide-right;
+    animation-delay: 0.5s;
+ }
+ .slide-right h3 {
+    animation: 2s slide-right;
+    animation-delay: 1.5s;
+ }
+
+ @keyframes slide-right {
+    from {
+       margin-left: -500px;
+    }
+
+    to {
+       margin-left: 0%;
+    }
+ }
+
 content h3{
     font-size: 1.55rem;
     margin-bottom: 0.5rem;
@@ -639,15 +712,50 @@ h3{
 
 .content-text{
     padding-top: 6%;
+    z-index: 10;
 }
 .content-img{
     padding-top: 0%;
+    z-index: 10;
 }
 
 .content-img img{
     width: 100%;
     z-index: 2;
+    animation-delay: 2s;
 }
+
+.fade-in {
+    animation: fadeIn ease 7s;
+    -webkit-animation: fadeIn ease 7s;
+    -moz-animation: fadeIn ease 7s;
+    -o-animation: fadeIn ease 7s;
+    -ms-animation: fadeIn ease 7s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
 
 .home:before{
     position: absolute;
@@ -660,7 +768,7 @@ h3{
     width: 100%;
     z-index: 1;
     height: 15%;
-    opacity: .2;
+    opacity: 1.5;
     animation: waveone 10s linear infinite;
 }
 
@@ -682,7 +790,7 @@ h3{
     background-size: cover;
     width: 100%;
     height: 15%;
-    opacity: .2;
+    opacity: 1.5;
     animation: wavetwo 10s linear infinite;
  } 
 
@@ -700,7 +808,25 @@ h3{
     align-items: center;
     width: 89%;
     margin-top: 3rem;
+    -webkit-animation: jump 8s cubic-bezier(0.02, 1.24, 1, 1.18);
+    animation: jump 3s cubic-bezier(0.02, 1.24, 1, 1.18);
 }
+@-webkit-keyframes jump {
+    0% {
+      transform: translateX(600px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  @keyframes jump {
+    0% {
+      transform: translateX(600px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
 
 .btns{
     border-radius: 5px;
