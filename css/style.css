@@ -726,11 +726,11 @@ h3{
 }
 
 .fade-in {
-    animation: fadeIn ease 7s;
-    -webkit-animation: fadeIn ease 7s;
-    -moz-animation: fadeIn ease 7s;
-    -o-animation: fadeIn ease 7s;
-    -ms-animation: fadeIn ease 7s;
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 15s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
   }
   @keyframes fadeIn {
     0% {opacity:0;}
